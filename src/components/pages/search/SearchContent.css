@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+.media{
+    width:247px;
+    height: 380px;
+    display: flex;
+    border-radius: 14px;
+    top:5%;
+    left: 0;
+    margin-right: 50px ;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    flex-direction: column;
+    height: 380px;
+    position: relative;    
+     flex-wrap: wrap;
+    justify-content: space-around;
+    transition: 0.5s;
+    flex:1;
+    background-color: linear-gradient(to top,white,white);
+   
+    
+}
+
+
+
+/* .media:hover:before{
+    width:200px;
+    display: flex;
+    border-radius: 14px;
+    top:5%;
+    left: 0;
+    margin-right: 50px ;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    flex-direction: column;
+    padding: 5px;
+    position: relative;    
+     flex-wrap: wrap;
+    justify-content: space-around;
+    transition: 0.5s;
+    flex:1;
+  
+    transition: 0.5s;
+    opacity: 1;
+} */
+
+
+
+.media img{
+     width:250px;
+     display: flex;
+     border-radius: 20px;
+     justify-content: space-around;
+     top:0;
+     height: 100%;
+     position: relative;
+ }
+
+ .content{
+ 
+    position: relative;
+    color: white;
+    opacity: 0;
+    transform: translateY(0px);
+}
+
+
+.media:hover{
+    box-shadow:transparent ;
+}
+
+.media:hover .content{
+    display: flex;
+    opacity: 1; 
+    transform: translate(-1px,100px);
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 2px;
+    position: absolute;
+    transition: 0.5s ; 
+    color:#0D94FB;
+    font-family:Montserrat ;
+    font-size: 1.5rem;
+
+}
+
+.media:hover img{
+    opacity: 0.5;
+    
+    box-shadow: 0 25px 40px #0D94FB;
+}
+
+.media .content{
+    
+    display:flex;
+    font-family:Montserrat ;
+    font-size: 1.5rem;
+    color:#0D94FB;
+    transform: translate(0px,0px);
+    transition: 0.5s;
+    position: absolute;
+}
+
+.content span,p,strong{
+    color: whitesmoke;
+    font-family:Montserrat ;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 550px) {
+    .media {
+      width: 150px;
+    }
+  }
+
+

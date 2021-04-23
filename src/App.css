@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+.App {
+  background-color: #191919;
+  color: blanchedalmond ;
+  font-family: Staatliches;
+  
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+header a{
+  color: white;
+}
+figcaption{
+  position: absolute;
+  bottom: 2rem;
+  margin: 2rem;
+  font-size: 5rem;
+  color: white;
+}
+.image{
+  width: 100%;
+  height:100%;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App{
+  position: relative;
+  min-height: 100vh;
+ padding-top: 130px;
+  padding-bottom:70px;
+  background: rgb(0,0,0,0.8) url(./image/background.jpg);
+  background-blend-mode: darken;
+  left:0;
+  
+}
+
+.pageTitle {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  font-family: "Staatliches";
+  font-size: 2vw;
+  padding: 4px;
+  border-radius: 50px;
+  color: white;
+}
+
+.movies{
+  position: absolute;
+}
+
+@media (max-width:700px){
+  .app{
+    padding-top:70px;
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

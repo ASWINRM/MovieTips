@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+
+.majorimage{
+    display:flex;
+    position: relative;
+    
+}
+
+.majorimage .datas{
+transform: translateX(15%);
+
+
+}
+.majorimage .poster{
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 25px 40px #0D94FB;
+    
+}
+
+
+.majorimage .box{
+   position: relative;
+   
+}
+span p{
+    font-size: 5.5rem;
+}
+
+
+
+
+ .play-btn{
+     transform: translateX(40%);
+     width: 100px;
+     height: 100px;
+     background-color:rgb(0, 0, 0,0.7);
+ } 
+
+ .playayable img{
+     width: 100px;
+     height: 100px;
+     transform: translate(-255%,190%);  
+      
+ }
+
+.cast{
+    margin-top: 5%;
+    display: flex;
+   flex-wrap: wrap;
+   position: relative;
+}
+ 
+
+ .castdetails{
+     display:flex;
+     flex-wrap: wrap;
+     position: relative;
+     flex-direction: column;
+    margin: 15px;
+    width: 300px;
+    height:600px;
+    background-color: #212121;
+    color: black;
+ }
+ 
+
+ .Actors{
+     
+    height:450px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    
+ }
+
+ .actordetails{
+    position: absolute;
+    font-family: PlayfairDisplaySCdisplay;
+     width: 100%;
+     font-size: 25px;
+    bottom: 0%;
+   
+    
+ }

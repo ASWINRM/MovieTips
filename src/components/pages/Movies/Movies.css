@@ -1,0 +1,11 @@
+.pageTitle {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Staatliches";
+    font-size: 2rem;
+    padding: 4px;
+    color: white;
+    left:500%;
+  }
