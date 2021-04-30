@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/MovieTips/static/css/main.e6b1f288.chunk.css",
+    "main.js": "/MovieTips/static/js/main.52555295.chunk.js",
+    "main.js.map": "/MovieTips/static/js/main.52555295.chunk.js.map",
+    "runtime-main.js": "/MovieTips/static/js/runtime-main.0e06dcfa.js",
+    "runtime-main.js.map": "/MovieTips/static/js/runtime-main.0e06dcfa.js.map",
+    "static/js/2.c551f994.chunk.js": "/MovieTips/static/js/2.c551f994.chunk.js",
+    "static/js/2.c551f994.chunk.js.map": "/MovieTips/static/js/2.c551f994.chunk.js.map",
+    "static/js/3.21c3a898.chunk.js": "/MovieTips/static/js/3.21c3a898.chunk.js",
+    "static/js/3.21c3a898.chunk.js.map": "/MovieTips/static/js/3.21c3a898.chunk.js.map",
+    "index.html": "/MovieTips/index.html",
+    "static/css/main.e6b1f288.chunk.css.map": "/MovieTips/static/css/main.e6b1f288.chunk.css.map",
+    "static/js/2.c551f994.chunk.js.LICENSE.txt": "/MovieTips/static/js/2.c551f994.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/MovieTips/static/media/background.58eb0a0f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0e06dcfa.js",
+    "static/js/2.c551f994.chunk.js",
+    "static/css/main.e6b1f288.chunk.css",
+    "static/js/main.52555295.chunk.js"
+  ]
+}
