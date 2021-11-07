@@ -29,6 +29,7 @@ const history=useHistory();
     else if(value===1) history.push("/Movies");
     else if(value===2) history.push("/TVseries");
     else history.push("/search");
+    console.log("value "+value);
   },[value,history])
 
   return (

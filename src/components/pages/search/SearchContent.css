@@ -108,13 +108,25 @@
     font-family:Montserrat ;
 }
 
+.Autosearchdiv{
+    background-color: transparent;
+    display: list-item;
+}
 
-
-
-
-
-
-
+.Autosearchbox{
+    background-color:#0077c0;
+    color:white;
+    width:30%;
+    border-radius: 2px;
+    
+}
+.Autosearchbox p{
+   padding: 2px;
+}
+.Autosearchbox:hover{
+    transform: scaleY(1.1);
+    background-color: #00538C;
+}
 
 @media (max-width: 550px) {
     .media {

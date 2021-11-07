@@ -44,6 +44,9 @@ const Trending=()=>{
                 )
                 
             }
+            {
+                content && console.log(content)
+            }
         </div>
         
         <CustomPagination setpage={Setpage} />

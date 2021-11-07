@@ -3,6 +3,7 @@ import {unavailable} from '../config/config'
 import { Badge } from "@material-ui/core";
 import './Singlecontent.css'
 import {Link} from 'react-router-dom'
+import noposter from '../image.json'
 const Singlecontent=({
    id,title,poster,date,language,media_type,rating,liked,vote_average
 })=>{
@@ -20,7 +21,7 @@ const Singlecontent=({
      }
      
   />
-        <img src={poster? `${img_300}/${poster}`: unavailable}
+        <img src={poster? `https://image.tmdb.org/t/p/w500${poster}`: unavailable}
         alt="poster"></img>
         <div className='content'>
             <strong className="title">{title}</strong>
