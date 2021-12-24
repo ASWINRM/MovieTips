@@ -1,9 +1,9 @@
-import {img_300} from '../config/config'
+
 import {unavailable} from '../config/config'
 import { Badge } from "@material-ui/core";
 import './Singlecontent.css'
 import {Link} from 'react-router-dom'
-import noposter from '../image.json'
+
 const Singlecontent=({
    id,title,poster,date,language,media_type,rating,liked,vote_average
 })=>{

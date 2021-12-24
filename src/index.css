@@ -1,12 +1,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+  box-sizing: border-box;
+}
 body {
   margin: 0;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -17,10 +22,13 @@ code {
 html{
   font-size: 62.5;
   box-sizing: border-box;
+  
 }
 
 body{
   background-color: #181818;
+  width: 88%;
+
 }
 *{
   scroll-behavior: smooth;

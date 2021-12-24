@@ -12,7 +12,7 @@ import {useHistory} from 'react-router-dom'
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    height:70,
+    height:50,
     bottom:0,
     backgroundColor:"#212121",
     position:"fixed",

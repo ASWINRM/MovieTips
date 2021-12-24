@@ -17,10 +17,11 @@ function App(){
   return(
     
     <BrowserRouter>
-     <Header></Header>
-      
+  
+  <Header></Header>
     <div className="App">
-
+    
+     
       <Container>
         <Switch>
         <Route path="/" exact component={Trending}></Route>
@@ -29,10 +30,11 @@ function App(){
         <Route path="/search" component={search}></Route> 
         <Route path="/details/:id/:type" component={Details}></Route> 
         </Switch>
-      </Container>
-    
-      <SimpleBottomNavigation></SimpleBottomNavigation>
+      
+    </Container>
+      
     </div>
+    <SimpleBottomNavigation></SimpleBottomNavigation>
     </BrowserRouter>
   );
 }

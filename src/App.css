@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+*{
+  box-sizing: border-box;
+}
 .App {
   background-color: #191919;
   color: blanchedalmond ;
   font-family: Staatliches;
+  box-sizing: border-box;
+  width: 122%;
   
+ 
 }
 
 
