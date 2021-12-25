@@ -1,7 +1,10 @@
 {
   "homepage": "http://ASWINRM.github.io/MovieTips",
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "movietips",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.13.0"
+  },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",
