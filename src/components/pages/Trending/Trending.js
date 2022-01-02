@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import Singlecontent from '../../Singlecontent'
+
 import './Trending.css'
 import CustomPagination from'../pagination/CustomPagination'
 const Trending=()=>{
