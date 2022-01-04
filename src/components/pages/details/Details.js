@@ -233,60 +233,73 @@ const Details=(props)=>{
               
                
             </div>
-            <div>
-            <h1 className="recommend">TOP RECOMMENDED MOVIE ON THIS GENRE :</h1>
-                          <Carousel breakPoints={breakPoints}>
-                          
-                          {
-                           
-                             recommendmovies && recommendmovies.data.results.map((movie)=>
+            {
+             (recommendmovies&& recommendmovies.data.results.length>0) &&
 
-                             (
-                                <Singlecontent
-                                key={movie.id}
-                                id={movie.id}
-                                title={movie.title||movie.name}
-                                poster={movie.poster_path}
-                                date={movie.release_date||movie.first_air_date}
-                                language={movie.original_language}
-                                media_type={movie.media_type==="movie"?"Movie":movie.media_type}
-                                rating={movie.vote_average}
-                                liked={Math.floor(movie.popularity)}
-                                vote_average={movie.vote_average}
-                                ></Singlecontent>
-                              )
-                            )
-                          }
-                          </Carousel>
-                         
-                        </div>
-                        <div>
-            <h1 className="recommend">TOP RECOMMENDED SERIES ON THIS GENRE :</h1>
-                          <Carousel breakPoints={breakPoints}>
-                          
-                          {
-                           
-                             recommendtv && recommendtv.data.results.map((tv)=>
+               <div>
+              <h1 className="recommend">TOP RECOMMENDED MOVIE ON THIS GENRE :</h1>
+               <Carousel breakPoints={breakPoints}>
+               
+               {
+                
+                  recommendmovies && recommendmovies.data.results.map((movie)=>
 
-                             (
-                                <Singlecontent
-                                key={tv.id}
-                                id={tv.id}
-                                title={tv.title||tv.name}
-                                poster={tv.poster_path}
-                                date={tv.release_date||tv.first_air_date}
-                                language={tv.original_language}
-                                media_type={tv.media_type==="movie"?"Movie":tv.media_type}
-                                rating={tv.vote_average}
-                                liked={Math.floor(tv.popularity)}
-                                vote_average={tv.vote_average}
-                                ></Singlecontent>
-                              )
-                            )
-                          }
-                          </Carousel>
-                         
-                        </div>
+                  (
+                     <Singlecontent
+                     key={movie.id}
+                     id={movie.id}
+                     title={movie.title||movie.name}
+                     poster={movie.poster_path}
+                     date={movie.release_date||movie.first_air_date}
+                     language={movie.original_language}
+                     media_type={movie.media_type==="movie"?"Movie":movie.media_type}
+                     rating={movie.vote_average}
+                     liked={Math.floor(movie.popularity)}
+                     vote_average={movie.vote_average}
+                     ></Singlecontent>
+                   )
+                 )
+               }
+               </Carousel>
+              
+             </div>
+           
+            }
+           {
+            (recommendtv && recommendtv.data.results.length>0) &&
+             <div>
+             <h1 className="recommend">TOP RECOMMENDED SERIES ON THIS GENRE :</h1>
+                <Carousel breakPoints={breakPoints} enableSwipe={true} enableAutoPlay={true}
+                focusOnSelect={true}
+                showArrows={true}
+                transitionMs={5000}
+                autoPlaySpeed={200} >
+                
+                {
+                 
+                   recommendtv && recommendtv.data.results.map((tv)=>
+ 
+                   (
+                      <Singlecontent
+                      key={tv.id}
+                      id={tv.id}
+                      title={tv.title||tv.name}
+                      poster={tv.poster_path}
+                      date={tv.release_date||tv.first_air_date}
+                      language={tv.original_language}
+                      media_type={tv.media_type==="movie"?"Movie":tv.media_type}
+                      rating={tv.vote_average}
+                      liked={Math.floor(tv.popularity)}
+                      vote_average={tv.vote_average}
+                      ></Singlecontent>
+                    )
+                  )
+                }
+                </Carousel>
+               
+              </div>
+           }
+                   
           {/* <Carousel
           NextIcon={<NavigateNextIcon></NavigateNextIcon>}
           PrevIcon={< ArrowBackIosIcon></ ArrowBackIosIcon>}
