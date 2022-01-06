@@ -20,7 +20,8 @@ const Trending=()=>{
         fetchtrending();
         // eslint-disable-next-line
     },[page])
-    
+    let location=window.location.pathname.split('/');
+    console.log(location);
     return(
         <div>
         <div className="trending">

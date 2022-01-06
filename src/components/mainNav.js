@@ -8,6 +8,10 @@ import MovieFilterIcon from '@material-ui/icons/MovieFilter';
 import SearchIcon from '@material-ui/icons/Search';
 import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom'
+// import FormatLineSpacingIcon from '@mui/icons-material/FormatLineSpacing';
+// import MenuItem from '@mui/material/MenuItem';
+// import FormControl from '@mui/material/FormControl';
+// import Select from '@mui/material/Select';
 
 const useStyles = makeStyles({
   root: {
@@ -55,7 +59,10 @@ const history=useHistory();
       <BottomNavigationAction label="Search"
       className="nav"
       style={{color:"#fff"}}
-      icon={<SearchIcon />} />
+      icon={< SearchIcon  />} />
+      
+     
     </BottomNavigation>
   );
 }
+

@@ -50,13 +50,13 @@ const Details=(props)=>{
         fetchresults();
         fetchVideo();
         fetchcredits();
-        
+       
         // eslint-disable-next-line
     },[id]);
 
     useEffect(()=>{
       if(genres.length>0){
-        console.log(genres);
+        // console.log(genres);
         genres.forEach((genre)=>{
           fetchrecommendmovies(genre);
           fetchrecommendseries(genre);
@@ -68,7 +68,7 @@ const Details=(props)=>{
         
         Setcontent(data);
         if(data){
-            console.log(data);
+            // console.log(data);
             Setgenres(data.genres);
         }
 
@@ -95,9 +95,9 @@ const Details=(props)=>{
      
         const {data}= await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=05c0fa57ae6df2b65e5b13ecbbb3630b&with_genres=${genre.id}`);
 
-        if(data){
-          console.log(data);
-        }
+        // if(data){
+        //   console.log(data);
+        // }
         Setrecommendmovies((prev)=>({...prev,data}));
       
       
@@ -107,9 +107,9 @@ const Details=(props)=>{
       
         const {data}= await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=05c0fa57ae6df2b65e5b13ecbbb3630b&with_genres=${genre.id}`);
 
-        if(data){
-          console.log(data);
-        }
+        // if(data){
+        //   console.log(data);
+        // }
         Setrecommendtv((prev)=>({...prev,data}));
       
     }
@@ -160,9 +160,9 @@ const Details=(props)=>{
                       ? `https://image.tmdb.org/t/p/w500${content.poster_path}`
                       : unavailable} alt="moviepic"></img>
                       </div>
-                      {
+                      {/* {
                         console.log(content.poster_path)
-                      }
+                      } */}
                   {playicon===1 && (
                       <div className="playayable">
                       <div className="play-btn">
@@ -238,7 +238,11 @@ const Details=(props)=>{
 
                <div>
               <h1 className="recommend">TOP RECOMMENDED MOVIE ON THIS GENRE :</h1>
-               <Carousel breakPoints={breakPoints}>
+               <Carousel breakPoints={breakPoints} enableSwipe={true} enableAutoPlay={true}
+                focusOnSelect={true}
+                showArrows={true}
+                transitionMs={5000}
+                autoPlaySpeed={200}>
                
                {
                 
@@ -300,15 +304,12 @@ const Details=(props)=>{
               </div>
            }
                    
-          {/* <Carousel
-          NextIcon={<NavigateNextIcon></NavigateNextIcon>}
-          PrevIcon={< ArrowBackIosIcon></ ArrowBackIosIcon>}
-          >
-
-          </Carousel> */}
-           {
+         
+           {/* {
              recommendmovies&&console.log(recommendmovies.data.results)
-           }
+           } */}
+           
+           
 
         </div>
     );

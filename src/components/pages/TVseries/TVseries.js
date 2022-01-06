@@ -15,6 +15,8 @@ const TVseries=()=>{
     const genreteURL=useGenre(selectedGenres);
     console.log(selectedGenres);
     console.log(genreteURL);
+    let location=window.location.pathname.split('/')[1];
+    console.log(location);
     const fetchtvseries=async ()=>{
         window.scroll(0,0);
           const data=await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=05c0fa57ae6df2b65e5b13ecbbb3630b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreteURL}`);
