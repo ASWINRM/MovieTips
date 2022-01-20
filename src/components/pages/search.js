@@ -8,12 +8,13 @@ import {useHistory} from 'react-router-dom'
 import '../Singlecontent.css'
 import {
     Button,
-    createMuiTheme,
+    
     Tab,
     Tabs,
     TextField,
     ThemeProvider,
   } from "@material-ui/core";
+  import { createTheme } from '@mui/material/styles';
 
 import SearchIcon from '@material-ui/icons/Search'  
 
@@ -28,7 +29,7 @@ const Search=()=>{
     const[numofpages,Setnumofpages]=useState(0);
     const [searchText,SetsearchText]=useState("");
     const history=useHistory();
-    const darkTheme=createMuiTheme({
+    const darkTheme=createTheme({
         palette:{
             type:"dark",
             primary:{

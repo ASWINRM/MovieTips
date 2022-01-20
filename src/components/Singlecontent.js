@@ -21,7 +21,7 @@ const Singlecontent=({
      }
      
   />
-        <img src={poster? `https://image.tmdb.org/t/p/w500${poster}`: unavailable}
+        <img src={poster? `https://image.tmdb.org/t/p/w500${poster}`: `https://www.movienewz.com/img/films/poster-holder.jpg`}
         alt="poster"></img>
         <div className='content'>
             <strong className="title">{title}</strong>

@@ -18,7 +18,7 @@ const SearchContent=({
          }
          
       />
-            <img src={poster? `${img_300}/${poster}`: unavailable}></img>
+            <img src={poster? `${img_300}/${poster}`: `https://www.movienewz.com/img/films/poster-holder.jpg`}></img>
             <div className='content'>
                 <strong className="title">{title}</strong>
                 <span>{media_type==="tv"?media_type="TVseries":media_type="Movie"}</span>
