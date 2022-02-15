@@ -1,5 +1,6 @@
+import React from 'react'
 import axios from 'axios';
-import {React, useEffect, useState} from 'react';
+import { useCallback, useEffect, useState} from 'react';
 import Singlecontent from '../../Singlecontent'
 import '../Trending/Trending.css'
 import CustomPagination from'../pagination/CustomPagination'
@@ -16,7 +17,7 @@ const Movies=()=>{
     console.log(genreteURL);
     let location=window.location.pathname.split('/')[1];
     console.log(location);
-    const fetchmovies=async ()=>{
+    const fetchmovies=useCallback(async ()=>{
         window.scroll(0,0);
           const data=await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=05c0fa57ae6df2b65e5b13ecbbb3630b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreteURL}`);
       
@@ -24,12 +25,21 @@ const Movies=()=>{
          Setcontent(data.data.results);
          console.log(data.data.results);
          
-    }
+    },[page,genreteURL])
+   
     
     useEffect(()=>{
-        fetchmovies();
+        const controller = new AbortController();
+        const signal = controller.signal;
+        try{
+            fetchmovies(signal);
+        }catch(e){
+            console.log(e)
+        }
+       
         // eslint-disable-next-line
-    },[page,genreteURL]);
+        return () => controller.abort();
+    },[fetchmovies]);
 
     return(
         <div>

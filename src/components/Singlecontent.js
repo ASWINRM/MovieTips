@@ -1,5 +1,5 @@
 
-import {unavailable} from '../config/config'
+import React from 'react'
 import { Badge } from "@material-ui/core";
 import './Singlecontent.css'
 import {Link} from 'react-router-dom'

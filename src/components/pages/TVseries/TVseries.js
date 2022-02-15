@@ -1,5 +1,6 @@
+import React from 'react'
 import axios from 'axios';
-import {React, useEffect, useState} from 'react';
+import { useEffect, useState} from 'react';
 import Singlecontent from '../../Singlecontent'
 import '../Trending/Trending.css'
 import CustomPagination from'../pagination/CustomPagination'
@@ -17,17 +18,30 @@ const TVseries=()=>{
     console.log(genreteURL);
     let location=window.location.pathname.split('/')[1];
     console.log(location);
-    const fetchtvseries=async ()=>{
-        window.scroll(0,0);
-          const data=await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=05c0fa57ae6df2b65e5b13ecbbb3630b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreteURL}`);
-      
-        Setnumofpages(data.data.total_pages);
-         Setcontent(data.data.results);
+    const fetchtvseries=async (signal)=>{
+       
+        try{
+            window.scroll(0,0);
+            const data=await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=05c0fa57ae6df2b65e5b13ecbbb3630b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreteURL}`,{signal:signal});
+        
+          Setnumofpages(data.data.total_pages);
+           Setcontent(data.data.results);
+        }catch(e){
+            console.log(e)
+        }
+       
          
     }
     
     useEffect(()=>{
-        fetchtvseries();
+        const controller = new AbortController();
+        const signal = controller.signal;
+        try{
+            fetchtvseries(signal);
+        }catch(e){
+            console.log(e)
+        }
+        return () => controller.abort();
         // eslint-disable-next-line
     },[page,genreteURL]);
 

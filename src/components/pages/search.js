@@ -1,4 +1,5 @@
-import {React, useEffect, useState} from 'react'
+import React from 'react'
+import { useEffect, useState,useCallback} from 'react'
 import Singlecontent from '../Singlecontent';
 import './Trending/Trending.css'
 import  './search/SearchContent.css'
@@ -7,16 +8,16 @@ import CustomPagination from'./pagination/CustomPagination'
 import {useHistory} from 'react-router-dom'
 import '../Singlecontent.css'
 import {
-    Button,
-    
+    Button, 
     Tab,
     Tabs,
     TextField,
     ThemeProvider,
   } from "@material-ui/core";
-  import { createTheme } from '@mui/material/styles';
+
 
 import SearchIcon from '@material-ui/icons/Search'  
+import { createTheme } from '@mui/material/styles';
 
 import axios from 'axios';
 
@@ -37,40 +38,54 @@ const Search=()=>{
             }
         }
     })
-    
+
    
-   const fetchsearch=async ()=>{
+   
+     
+   const fetchsearch= useCallback(async (signal)=>{
     window.scroll(0,0);
       console.log(searchText);
-      if(searchText!==""){
-        const data=await axios.get(`https://api.themoviedb.org/3/search/${type ? "tv":"movie"}?api_key=05c0fa57ae6df2b65e5b13ecbbb3630b&language=en-US&page=1&query=${searchText}&include_adult=false
-        `);
-        //${type ? "tv":"movie"}
-        console.log(type);
-        Setcontent(data.data.results);
-        Setnumofpages(data.data.total_pages);
-        console.log(data.data.results);
+      try{
+        if(searchText!==""){
+            const data=await axios.get(`https://api.themoviedb.org/3/search/${type ? "tv":"movie"}?api_key=05c0fa57ae6df2b65e5b13ecbbb3630b&language=en-US&page=1&query=${searchText}&include_adult=false
+            `,{signal:signal});
+            //${type ? "tv":"movie"}
+            console.log(type);
+            Setcontent(data.data.results);
+            Setnumofpages(data.data.total_pages);
+            console.log(data.data.results);
+          }
+      }catch(e){
+          console.log(e)
       }
      
-}
+     
+},[searchText,type])
+   
 useEffect(()=>{
-    if(searchText.length>0){
-        fetchsearch();
+    const controller = new AbortController();
+    const signal = controller.signal;
+    try{
+        if(searchText.length>0){
+            fetchsearch(signal);
+        }
+    }catch(e){
+        console.log(e)
     }
+   
+    return () => controller.abort();
+},[searchText,fetchsearch]);
+
+
     
-},[searchText]);
-    useEffect(()=>{
-        fetchsearch();
-        console.log(type);
-        // eslint-disable-next-line
-    },[page,type])
 
     const media_type=type ? "tv":"Movie";
 
-    const showdetail=(id,mediatype)=>{
-        // /details/${id}/${genre}
-        history.push(`/details/${id}/${mediatype}`)
-    }
+    // const showdetail=(id,mediatype)=>{
+    //     // /details/${id}/${genre}
+    //     c.id,type?"tv":"movie"
+    //     history.push(`/details/${id}/${mediatype}`)
+    // }
     
 
     return(
@@ -79,6 +94,7 @@ useEffect(()=>{
            <ThemeProvider theme={darkTheme}>
                <div className="Search">
                    <TextField
+            //    className={classes.ul}
                    style={{flex:1 ,color:"#0D94FB",width:"90%"}}
                    variant="filled"
                    label="Search for your favourite"
@@ -93,7 +109,7 @@ useEffect(()=>{
                {
                    searchText.length>0 && <div className="Autossearchdiv">
                    {(content!==""&&searchText!=="") && content.length>8 ? content.slice(0, 8).map((c)=>(
-                   <div className="Autosearchbox" key={c.id} onClick={()=>showdetail(c.id,type?"tv":"movie")}>
+                   <div className="Autosearchbox" key={c.id} onClick={()=>history.push(`/details/${c.id}/${type?"tv":"movie"}`)}>
                           {type? (<p>{c.title||c.name}</p>):(<p>{c.title }</p>)}
                           </div>))
                           
